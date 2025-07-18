@@ -1,0 +1,10 @@
+services:
+  every-frame:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: every-frame
+    volumes:
+      - ./frames:/app/frames
+      - ./config:/app/config
+    restart: unless-stopped

@@ -1,0 +1,19 @@
+[package]
+name = "every-frame"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.98"
+bsky-sdk = { version = "0.1.20", features = ["config-toml"] }
+dotenvy = "0.15.7"
+env_logger = "0.11.8"
+image = "0.25.6"
+ipld-core = "0.4.2"
+jxl-oxide = { version = "0.12.2", features = ["image"] }
+log = "0.4.27"
+serde = { version = "1.0.219", features = ["derive"] }
+tokio = { version = "1.46.1", features = ["full"] }
+tokio_schedule = "0.3.2"
+toml = "0.9.2"
+thiserror = "2.0.12"
