@@ -54,6 +54,14 @@ pub async fn main() -> anyhow::Result<()> {
     );
 
     let movie_name = config.movie_name.clone();
+
+    if config.post_immediately {
+        info!("Posting frames immediately on startup");
+        post_frame_task(&movie_name).await;
+    } else {
+        info!("Will post frames every {} seconds", POST_INTERVAL_SECONDS);
+    }
+
     every(POST_INTERVAL_SECONDS)
         .seconds()
         .perform(move || {
