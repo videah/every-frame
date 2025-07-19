@@ -12,10 +12,8 @@ use anyhow::{
 use image::{
     DynamicImage,
     GenericImageView,
-    ImageEncoder,
 };
 use log::*;
-use tokio::fs::File;
 
 use crate::{
     config::{
