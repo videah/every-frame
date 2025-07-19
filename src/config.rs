@@ -40,6 +40,8 @@ pub struct Config {
     pub app_password: String,
     /// Movie name for generating alt text
     pub movie_name: String,
+    /// Whether to post frames immediately on startup
+    pub post_immediately: bool,
 }
 
 impl Config {
@@ -55,6 +57,9 @@ impl Config {
                 .context("Missing BLUESKY_APP_PASSWORD environment variable")?,
             movie_name: env::var("MOVIE_NAME")
                 .context("Missing MOVIE_NAME environment variable")?,
+            post_immediately: env::var("POST_IMMEDIATELY")
+                .map(|v| v == "true")
+                .unwrap_or(false),
         })
     }
 }
