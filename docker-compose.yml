@@ -3,8 +3,13 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    user: 1000:1000
     container_name: every-frame
     volumes:
       - ./frames:/app/frames
       - ./config:/app/config
+    environment:
+      - MOVIE_NAME
+      - BLUESKY_IDENTIFIER
+      - BLUESKY_APP_PASSWORD
     restart: unless-stopped
