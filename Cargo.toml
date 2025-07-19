@@ -10,7 +10,6 @@ dotenvy = "0.15.7"
 env_logger = "0.11.8"
 image = "0.25.6"
 ipld-core = "0.4.2"
-jxl-oxide = { version = "0.12.2", features = ["image"] }
 log = "0.4.27"
 serde = { version = "1.0.219", features = ["derive"] }
 tokio = { version = "1.46.1", features = ["full"] }
